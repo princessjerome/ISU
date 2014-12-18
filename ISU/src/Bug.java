@@ -2,7 +2,10 @@ public abstract class Bug {
     //basic stats
     protected int hp, speed, power, armour, piercing, agility;
     protected String name;
-    private static int xp;
+    //maybe add status effects?
+        
+    //classlevel stats
+    private static int finishXP;
     
     //overloaded constructors
     public Bug(){
@@ -18,12 +21,12 @@ public abstract class Bug {
     public Bug(String x){
         name = x;
         //idk about these stats
-        hp = (int)(Math.random()*5) + 3;
-        speed = (int)(Math.random()*5) + 3;
-        power = (int)(Math.random()*5) + 3;
-        armour = (int)(Math.random()*5) + 3;
-        piercing = (int)(Math.random()*5) + 3;
-        agility = (int)(Math.random()*5) + 3;
+        hp = (int)(Math.random()*5) + 100;
+        speed = (int)(Math.random()*5) + 5;
+        power = (int)(Math.random()*5) + 5;
+        armour = (int)(Math.random()*5) + 5;
+        piercing = (int)(Math.random()*5) + 5;
+        agility = (int)(Math.random()*5) + 5;
     }
 
     
@@ -54,6 +57,9 @@ public abstract class Bug {
         piercing+=5;
     }
     
+    public final void skitter(){
+        agility+=5;
+    }
     
     /*
     public final String steroidRules(){
@@ -74,6 +80,5 @@ public abstract class Bug {
     */
     
     //abstract methods
-    abstract public void Finisher();
-    abstract public void skitter();
+    abstract public int Finisher();
 }
